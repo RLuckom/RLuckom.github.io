@@ -1,0 +1,3 @@
+[submodule "submodules/jsGameOfLife"]
+	path = submodules/jsGameOfLife
+	url = https://github.com/RLuckom/jsGameOfLife.git
