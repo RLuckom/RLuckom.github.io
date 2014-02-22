@@ -13,7 +13,7 @@
     <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css" />
     <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
     <script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
-    <script src="./submodules/jsGameOfLife/src/js/gameOfLife.js"></script>
+    <script src="./submodules/jsGameOfLife/src/js/canvasgameoflife.js"></script>
     <title>RLuckom</title>
   </head>
 
@@ -55,7 +55,7 @@
     </div>
     <script type="text/javascript">
     	var goElement = document.getElementById('GOL');
-    	var gol = new GameOfLife(500, 500, 50, 50);
+    	var gol = new CanvasGameOfLife(500, 500, 50, 50);
     	goElement.appendChild(gol.div);
     </script>
   </body>
