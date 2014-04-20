@@ -75,7 +75,9 @@ First, we declare the variables NUMBER_OF_BITS, count, and n, which are the only
 
 Remember that an integer represented by a computer is already a binary number. In binary, numbers are represented as ones and zeros. Because I happen to have six LEDs, I'm going to use six-digit binary numbers. So the number one might like this: 
 
+'''
 000001
+'''
 
 However, that way of writing a number has a problem: why all the leading zeros? No one says a candy bar costs $000001.00, because those zeros don't change the value. 000001 == 1. You could just write "1."
 
