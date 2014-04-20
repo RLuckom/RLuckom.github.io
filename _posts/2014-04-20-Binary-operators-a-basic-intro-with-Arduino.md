@@ -1,11 +1,16 @@
 ---
 layout: post
-title: Binary operators: a basic intro with Arduino.
+title: Binary operators-- a basic intro with Arduino.
 ---
 
-Bitwise operators are in the same category as familliar mathematical operators like +, -, /, and *, but provide ways to operate on data as strings of binary bits, without paying attention to what the data represents. As a (mostly) python developer, I don't usually have a lot of reasons to use them. That's a shame, because whenever I do, I find myself thinking more carefully about how data is actually represented in a computer, and appreciating the neat little tricks that representation makes possible. In this post, I'm going to use the example of a 17-line Arduino sketch that counts in binary using LEDs. A video of the counter can be seen at https://www.youtube.com/watch?v=E53rhBUhtLc&feature=youtu.be. 
+Binary operators-- a basic intro with Arduino.
+----
 
-The code --all of the code-- looks like this:
+Bitwise operators are in the same category as familliar mathematical operators like +, -, /, and \*, but provide ways to operate on data as strings of binary bits, without paying attention to what the data represents. As a (mostly) python developer, I don't usually have a lot of reasons to use them. That's a shame, because whenever I do, I find myself thinking more carefully about how data is actually represented in a computer, and appreciating the neat little tricks that representation makes possible. In this post, I'm going to use the example of a little Arduino sketch that counts in binary using LEDs. 
+
+<iframe width="420" height="315" src="//www.youtube.com/embed/E53rhBUhtLc" frameborder="0"> </iframe>
+
+The code looks like this:
 
 ```
 // NUMBER_OF_BITS is the number of individual LEDS we can turn on and off.
@@ -79,7 +84,7 @@ And yet. When we look at the LED counter, we see that we have six LEDs. Even if 
 ```
 | | | | | |X|
 ```
-That way, we see the total number of bits we /could/ use, even if we're not using all of them. Let's look at addition in this notation next. To add two numbers, we're going to show the numbers themselves, and the answer, and we're going to use an extra number to show the carryover. So adding 1 + 1 looks like this:
+That way, we see the total number of bits we *could* use, even if we're not using all of them. Let's look at addition in this notation next. To add two numbers, we're going to show the numbers themselves, and the answer, and we're going to use an extra number to show the carryover. So adding 1 + 1 looks like this:
 
 ```
 carryover -> | | | | | | |
@@ -111,7 +116,7 @@ carryover -> | | | | |X| |
 
 Notice how we can convert this answer back into 'traditional' binary notation by writing it a ones and zeros: 000010, and we can also see what it means for the LEDs: the second from the right should be on, and all the others should be off.
 
-Remember that integers in a computer /always look like this/. There is no operation needed to convert an integer into binary, because that's already how it's stored. What is sometimes hard is getting the computer to /show/ you the binary representation, because computers almost always display numbers in decimal notation for human convenience.
+Remember that integers in a computer *always look like this*. There is no operation needed to convert an integer into binary, because that's already how it's stored. What is sometimes hard is getting the computer to *show* you the binary representation, because computers almost always display numbers in decimal notation for human convenience.
 
 There are some interesting possibilities when we start thinking of numbers as binary strings. If we have the string | | | |X| | |, we can use "shift" operators to push the string to the left and right. The binary shift operators are left-shift: << and right-shift: >>. We use them like this:
 
@@ -131,7 +136,7 @@ Note that if you push an X off the string to either side, it just goes away:
 
 Logical operators that act on the binary representations of numbers are called "bitwise operators" because they operate bit by bit, rather than on the numbers as a whole. There are bitwise versions of the 'and' operator: &, the 'or' operator: |, the 'XOR' operator: ^, and the 'not' operator: ~. We're only going to look at the and operator in this post, because it's the only one I used in the counter.
 
-The and operator compares two binary strings and produces a third string with Xs in any position where /both/ of the input strings had Xs:
+The and operator compares two binary strings and produces a third string with Xs in any position where *both* of the input strings had Xs:
 
 ```
    | |X|X| | | |
