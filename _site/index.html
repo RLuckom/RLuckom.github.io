@@ -97,9 +97,11 @@ void loop() {
 
 <p>First, we declare the variables NUMBER_OF_BITS, count, and n, which are the only non-built-in variables we’ll need for this whole program. Then in the setup function, we set the mode of pins 1 through NUMBER_OF_BITS to OUTPUT, because we’ll be controlling them rather than reading data from them. Then we have a loop function, which gets run over and over. In it, we display the current count on the LEDs in binary and then add one to the count variable. Next, we’re going to look at the way we decide which LEDs should be on for a given number.</p>
 
-<p>Remember that an integer represented by a computer is already a binary number. In binary, numbers are represented as ones and zeros. Because I happen to have six LEDs, I’m going to use six-digit binary numbers. So the number one might like this:</p>
+<p>Remember that an integer represented by a computer is already a binary number. In binary, numbers are represented as ones and zeros. Because I happen to have six LEDs, I’m going to use six-digit binary numbers. So the number one might look like this:</p>
 
-<p>”’ 000001 ”’</p>
+<pre><code>
+000001
+</code></pre>
 
 <p>However, that way of writing a number has a problem: why all the leading zeros? No one says a candy bar costs $000001.00, because those zeros don’t change the value. 000001 == 1. You could just write “1.”</p>
 
@@ -139,11 +141,11 @@ carryover -&gt; | | | | |X| |
    result -&gt; | | | | |X| |
 </code></pre>
 
-<p>Notice how we can convert this answer back into ‘traditional’ binary notation by writing it a ones and zeros: 000010, and we can also see what it means for the LEDs: the second from the right should be on, and all the others should be off.</p>
+<p>Notice how we can convert this answer back into ‘traditional’ binary notation by writing it as ones and zeros: 000010, and we can also see what it means for the LEDs: the second from the right should be on, and all the others should be off.</p>
 
 <p>Remember that integers in a computer <em>always look like this</em>. There is no operation needed to convert an integer into binary, because that’s already how it’s stored. What is sometimes hard is getting the computer to <em>show</em> you the binary representation, because computers almost always display numbers in decimal notation for human convenience.</p>
 
-<p>There are some interesting possibilities when we start thinking of numbers as binary strings. If we have the string | | | |X| | |, we can use “shift” operators to push the string to the left and right. The binary shift operators are left-shift: « and right-shift: ». We use them like this:</p>
+<p>There are some interesting possibilities when we start thinking of numbers as binary strings. If we have the string <code>| | | |X| | |</code>, we can use “shift” operators to push the string to the left and right. The binary shift operators are left-shift: <code>&lt;&lt;</code> and right-shift: <code>&gt;&gt;</code>. We use them like this:</p>
 
 <pre><code>
 | | | |X| | | &lt;&lt; 2 = | |X| | | | |
@@ -152,7 +154,7 @@ carryover -&gt; | | | | |X| |
 
 </code></pre>
 
-<p>Note that if you push an X off the string to either side, it just goes away:</p>
+<p>Note that if you push an X off the string to either side, it just goes away [1]:</p>
 
 <pre><code>
 | | | |X| | | &lt;&lt; 20 = | | | | | | |
@@ -160,7 +162,7 @@ carryover -&gt; | | | | |X| |
 | | | |X| | | &gt;&gt; 20 = | | | | | | |
 </code></pre>
 
-<p>Logical operators that act on the binary representations of numbers are called “bitwise operators” because they operate bit by bit, rather than on the numbers as a whole. There are bitwise versions of the ‘and’ operator: &amp;, the ‘or’ operator: |, the ‘XOR’ operator: ^, and the ‘not’ operator: ~. We’re only going to look at the and operator in this post, because it’s the only one I used in the counter.</p>
+<p>Logical operators that act on the binary representations of numbers are called “bitwise operators” because they operate bit by bit, rather than on the numbers as a whole. There are bitwise versions of the ‘and’ operator: <code>&amp;</code>, the ‘or’ operator: <code>|</code>, the ‘XOR’ operator: <code>^</code>, and the ‘not’ operator: <code>~</code>. We’re only going to look at the and operator in this post, because it’s the only one I used in the counter.</p>
 
 <p>The and operator compares two binary strings and produces a third string with Xs in any position where <em>both</em> of the input strings had Xs:</p>
 
@@ -171,7 +173,7 @@ carryover -&gt; | | | | |X| |
    | | |X| | | |
 </code></pre>
 
-<p>A common use of the and and or operators is “masking,” and it’s motivated by the need to see what’s in a particular bit or sequence of bits in a number. Masking works by and-ing the number we’d like to inspect with a number that has Xs in the positions we want to inspect. For instance, when we want to know whether the third bit of a number has an x, we could and it with | | | |X| | |:</p>
+<p>A common use of the and and or operators is “masking,” and it’s motivated by the need to see what’s in a particular bit or sequence of bits in a number. Masking works by and-ing the number we’d like to inspect with a number that has Xs in the positions we want to inspect. For instance, when we want to know whether the third bit of a number has an x, we could and it with <code>| | | |X| | |</code>:</p>
 
 <pre><code>
  input -&gt;   |X|X|X|X|X|X|      | | | | | | |
@@ -180,21 +182,22 @@ carryover -&gt; | | | | |X| |
  result -&gt;  | | | |X| | |      | | | | | | |
 </code></pre>
 
-<p>For our counter, we have a variable called ‘count’ that will hold the current number we want to display. We want to turn each LED on or off based on whether the corresponding bit in ‘count’ is a 1 or a 0. We can make a bit mask for each bit in turn by starting with the number | | | | | |X|, and then left-shifting it until the X is in the position we want to inspect. When we ‘and’ the count variable with this mask, we will either get zero, if the bit we were interested in was a zero, or we’ll get a number bigger than zero if it wasn’t.</p>
+<p>For our counter, we have a variable called ‘count’ that will hold the current number we want to display. We want to turn each LED on or off based on whether the corresponding bit in ‘count’ is a 1 or a 0. We can make a bit mask for each bit in turn by starting with the number <code>| | | | | |X|</code>, and then left-shifting it until the X is in the position we want to inspect. When we ‘and’ the count variable with this mask, we will either get zero, if the bit we were interested in was a zero, or we’ll get a number bigger than zero if it wasn’t.</p>
 
-<p>So for each number n between 1 and NUMBER_OF_BITS, we ‘and’ the count variable with 1 « n, and then set LED # n to HIGH if the result is bigger than 0 and LOW if not:</p>
+<p>So for each number n between 1 and NUMBER_OF_BITS, we ‘and’ the count variable with <code>1 &lt;&lt; n</code>, and then set LED # n to HIGH if the result is bigger than 0 and LOW if not [2]:</p>
 
 <pre><code>
 for (n = 1; n &lt;= NUMBER_OF_BITS; n++)  {
   if (count &amp; (1 &lt;&lt; n)) &gt; 0) {
-     command = HIGH
+     command = HIGH;
   } else {
      command = LOW;
   }
   digitalWrite(n, command);
 }
-'''
 </code></pre>
+
+<p>[1] This is an oversimplification. The data type (int, long, etc) often has a set width. Bits shifted beyond that width go away.<br />[2] Also an oversimplification. Using Two’s Complement representation <a href="http://en.wikipedia.org/wiki/Two%27s_complement">http://en.wikipedia.org/wiki/Two%27s_complement</a>, one bit is used to denote whether the value is positive or negative. I haven’t run the counter long enough for the representation of int to wrap, so I’m not sure what will hapopen when it does. Exciting!</p>
                 </div><!-- entry-content -->
             </div><!-- bd -->
         </div><!-- content -->

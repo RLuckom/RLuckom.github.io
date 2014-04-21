@@ -73,8 +73,7 @@ void loop() {
 
 First, we declare the variables NUMBER_OF_BITS, count, and n, which are the only non-built-in variables we'll need for this whole program. Then in the setup function, we set the mode of pins 1 through NUMBER_OF_BITS to OUTPUT, because we'll be controlling them rather than reading data from them. Then we have a loop function, which gets run over and over. In it, we display the current count on the LEDs in binary and then add one to the count variable. Next, we're going to look at the way we decide which LEDs should be on for a given number.
 
-Remember that an integer represented by a computer is already a binary number. In binary, numbers are represented as ones and zeros. Because I happen to have six LEDs, I'm going to use six-digit binary numbers. So the number one might like this: 
-
+Remember that an integer represented by a computer is already a binary number. In binary, numbers are represented as ones and zeros. Because I happen to have six LEDs, I'm going to use six-digit binary numbers. So the number one might look like this: 
 
 ```
 000001
@@ -117,11 +116,11 @@ carryover -> | | | | |X| |
    result -> | | | | |X| |
 ```
 
-Notice how we can convert this answer back into 'traditional' binary notation by writing it a ones and zeros: 000010, and we can also see what it means for the LEDs: the second from the right should be on, and all the others should be off.
+Notice how we can convert this answer back into 'traditional' binary notation by writing it as ones and zeros: 000010, and we can also see what it means for the LEDs: the second from the right should be on, and all the others should be off.
 
 Remember that integers in a computer *always look like this*. There is no operation needed to convert an integer into binary, because that's already how it's stored. What is sometimes hard is getting the computer to *show* you the binary representation, because computers almost always display numbers in decimal notation for human convenience.
 
-There are some interesting possibilities when we start thinking of numbers as binary strings. If we have the string | | | |X| | |, we can use "shift" operators to push the string to the left and right. The binary shift operators are left-shift: << and right-shift: >>. We use them like this:
+There are some interesting possibilities when we start thinking of numbers as binary strings. If we have the string ```| | | |X| | |```, we can use "shift" operators to push the string to the left and right. The binary shift operators are left-shift: ```<<``` and right-shift: ```>>```. We use them like this:
 
 ```
 | | | |X| | | << 2 = | |X| | | | |
@@ -129,7 +128,7 @@ There are some interesting possibilities when we start thinking of numbers as bi
 | | | |X| | | >> 2 = | | | | | |X|
 
 ```
-Note that if you push an X off the string to either side, it just goes away:
+Note that if you push an X off the string to either side, it just goes away [1]:
 
 ```
 | | | |X| | | << 20 = | | | | | | |
@@ -137,7 +136,7 @@ Note that if you push an X off the string to either side, it just goes away:
 | | | |X| | | >> 20 = | | | | | | |
 ```
 
-Logical operators that act on the binary representations of numbers are called "bitwise operators" because they operate bit by bit, rather than on the numbers as a whole. There are bitwise versions of the 'and' operator: &, the 'or' operator: |, the 'XOR' operator: ^, and the 'not' operator: ~. We're only going to look at the and operator in this post, because it's the only one I used in the counter.
+Logical operators that act on the binary representations of numbers are called "bitwise operators" because they operate bit by bit, rather than on the numbers as a whole. There are bitwise versions of the 'and' operator: ```&```, the 'or' operator: ```|```, the 'XOR' operator: ```^```, and the 'not' operator: ```~```. We're only going to look at the and operator in this post, because it's the only one I used in the counter.
 
 The and operator compares two binary strings and produces a third string with Xs in any position where *both* of the input strings had Xs:
 
@@ -148,7 +147,7 @@ The and operator compares two binary strings and produces a third string with Xs
    | | |X| | | |
 ```
 
-A common use of the and and or operators is "masking," and it's motivated by the need to see what's in a particular bit or sequence of bits in a number. Masking works by and-ing the number we'd like to inspect with a number that has Xs in the positions we want to inspect. For instance, when we want to know whether the third bit of a number has an x, we could and it with | | | |X| | |:
+A common use of the and and or operators is "masking," and it's motivated by the need to see what's in a particular bit or sequence of bits in a number. Masking works by and-ing the number we'd like to inspect with a number that has Xs in the positions we want to inspect. For instance, when we want to know whether the third bit of a number has an x, we could and it with ```| | | |X| | |```:
 
 ```
  input ->   |X|X|X|X|X|X|      | | | | | | |
@@ -157,18 +156,20 @@ A common use of the and and or operators is "masking," and it's motivated by the
  result ->  | | | |X| | |      | | | | | | |
 ```
 
-For our counter, we have a variable called 'count' that will hold the current number we want to display. We want to turn each LED on or off based on whether the corresponding bit in 'count' is a 1 or a 0. We can make a bit mask for each bit in turn by starting with the number | | | | | |X|, and then left-shifting it until the X is in the position we want to inspect. When we 'and' the count variable with this mask, we will either get zero, if the bit we were interested in was a zero, or we'll get a number bigger than zero if it wasn't. 
+For our counter, we have a variable called 'count' that will hold the current number we want to display. We want to turn each LED on or off based on whether the corresponding bit in 'count' is a 1 or a 0. We can make a bit mask for each bit in turn by starting with the number ```| | | | | |X|```, and then left-shifting it until the X is in the position we want to inspect. When we 'and' the count variable with this mask, we will either get zero, if the bit we were interested in was a zero, or we'll get a number bigger than zero if it wasn't. 
 
-So for each number n between 1 and NUMBER_OF_BITS, we 'and' the count variable with 1 << n, and then set LED # n to HIGH if the result is bigger than 0 and LOW if not:
+So for each number n between 1 and NUMBER_OF_BITS, we 'and' the count variable with ```1 << n```, and then set LED # n to HIGH if the result is bigger than 0 and LOW if not [2]:
 
 ```
 for (n = 1; n <= NUMBER_OF_BITS; n++)  {
   if (count & (1 << n)) > 0) {
-     command = HIGH
+     command = HIGH;
   } else {
      command = LOW;
   }
   digitalWrite(n, command);
 }
-'''
+```
 
+[1] This is an oversimplification. The data type (int, long, etc) often has a set width. Bits shifted beyond that width go away.  
+[2] Also an oversimplification. Using Two's Complement representation <http://en.wikipedia.org/wiki/Two%27s_complement>, one bit is used to denote whether the value is positive or negative. I haven't run the counter long enough for the representation of int to wrap, so I'm not sure what will hapopen when it does. Exciting!
