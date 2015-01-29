@@ -524,6 +524,7 @@ CanvasGameOfLife.prototype = {
 	    pauseButtonDiv.appendChild(label);
 		//pauseButtonDiv.setAttribute('style', style);
 		$(button).button();
+    console.log('button');
 		return pauseButtonDiv;
 	}
 };

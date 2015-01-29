@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raphael Luckom</title>
+    <description>Software Engineer specializing in Python and JavaScript.</description>
+    <link>https://rluckom.github.io/</link>
+    <atom:link href="https://rluckom.github.io/feed.xml" rel="self" type="application/rss+xml" />
+    <pubDate>Thu, 29 Jan 2015 00:57:08 -0500</pubDate>
+    <lastBuildDate>Thu, 29 Jan 2015 00:57:08 -0500</lastBuildDate>
+    <generator>Jekyll v2.4.0</generator>
+    
+      <item>
+        <title>Mandelbuddy</title>
+        <description>MandelBuddy is a short program I wrote in JavaScript to help me understand fractals. It draws the &lt;a href=&quot;http://en.wikipedia.org/wiki/Mandelbrot_set&quot;&gt;Mandelbrot set&lt;/a&gt; on a designated canvas, coloring the pixels based on how many steps it takes to determine if they are in the set.</description>
+        <pubDate>Wed, 28 Jan 2015 00:00:00 -0500</pubDate>
+        <link>https://rluckom.github.io/web%20development/2015/01/28/MandelBuddy/</link>
+        <guid isPermaLink="true">https://rluckom.github.io/web%20development/2015/01/28/MandelBuddy/</guid>
+        
+        
+        <category>web development</category>
+        
+      </item>
+    
+      <item>
+        <title>Restoration Slider</title>
+        <description>My fiancee wanted an interactive way to demonstrate the value her art restoration business delivers to customers. I made this JavaScript widget to show detailed before and after views of the artworks. Use the slider in the middle of the image to swipe between the before and after images.&lt;div class=&quot;restoration_slider&quot;&gt;&lt;img src=&quot;/img/slider/slider_img_before.jpg&quot; alt=&quot;Before&quot; title=&quot;Before&quot; width=&quot;600&quot; height=&quot;373&quot; class=&quot;aligncenter size-large wp-image-807&quot; /&gt;&lt;img src=&quot;/img/slider/slider_img_after.jpg&quot; alt=&quot;After&quot; title=&quot;After&quot; width=&quot;600&quot; height=&quot;373&quot; /&gt;&lt;/div&gt;</description>
+        <pubDate>Tue, 15 Jul 2014 00:00:00 -0400</pubDate>
+        <link>https://rluckom.github.io/web%20development/2014/07/15/Restoration-Slider/</link>
+        <guid isPermaLink="true">https://rluckom.github.io/web%20development/2014/07/15/Restoration-Slider/</guid>
+        
+        
+        <category>web development</category>
+        
+      </item>
+    
+      <item>
+        <title>Persistence Of Vision</title>
+        <description>I made this persistence of vision display using the Programmable Realtime Units in a BeagleBone Black embedded Linux computer. I finished it just in time for a New Years' Eve party, and the experience taught me a lot about designing electronics and programming in assembly. There are definitely more hardware projects in my future. &lt;br /&gt;&lt;br /&gt;&lt;iframe width=&quot;420&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/lpmPm4T6jZI&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</description>
+        <pubDate>Tue, 15 Jul 2014 00:00:00 -0400</pubDate>
+        <link>https://rluckom.github.io/hardware/2014/07/15/Persistence-Of-Vision/</link>
+        <guid isPermaLink="true">https://rluckom.github.io/hardware/2014/07/15/Persistence-Of-Vision/</guid>
+        
+        
+        <category>hardware</category>
+        
+      </item>
+    
+      <item>
+        <title>Javascript Game Of Life</title>
+        <description>I wrote a JavaScript version of Conway's Game of life as a way to learn about cellular automata. The original version was written using SVG for the board, but I found that SVG rendered too slowly for large boards so I switched to using a Canvas element. &lt;div id=&quot;GOL&quot;&gt;&lt;/div&gt; To run the game, click on individual squares to toggle them between the black and white states, then click &quot;Play.&quot; The game stops when the cursor is over the board and restarts when it leaves. The slider controls the time between steps. My favorite pattern to start with is the one in the image above.</description>
+        <pubDate>Tue, 15 Jul 2014 00:00:00 -0400</pubDate>
+        <link>https://rluckom.github.io/web%20development/2014/07/15/JavaScript-Game-Of-Life/</link>
+        <guid isPermaLink="true">https://rluckom.github.io/web%20development/2014/07/15/JavaScript-Game-Of-Life/</guid>
+        
+        
+        <category>web development</category>
+        
+      </item>
+    
+      <item>
+        <title>Dogwood</title>
+        <description>I wrote an SVG tree UI element using only vanilla JavaScript after suffering Dependency Fatigue on a personal project. The following is an ExtendableTree element that can be used as a Todo list. Click on the text of a node to edit it and show the dialog for deleting the node; click the plus circles beneath the nodes to add new ones.&lt;div id=&quot;ExtendableTree&quot;&gt;&lt;/div&gt;</description>
+        <pubDate>Tue, 15 Jul 2014 00:00:00 -0400</pubDate>
+        <link>https://rluckom.github.io/web%20development/2014/07/15/Dogwood/</link>
+        <guid isPermaLink="true">https://rluckom.github.io/web%20development/2014/07/15/Dogwood/</guid>
+        
+        
+        <category>web development</category>
+        
+      </item>
+    
+  </channel>
+</rss>
