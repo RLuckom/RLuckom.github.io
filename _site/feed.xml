@@ -5,8 +5,8 @@
     <description>Software Engineer specializing in Python and JavaScript.</description>
     <link>https://rluckom.github.io/</link>
     <atom:link href="https://rluckom.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 29 Jan 2015 06:27:32 -0500</pubDate>
-    <lastBuildDate>Thu, 29 Jan 2015 06:27:32 -0500</lastBuildDate>
+    <pubDate>Thu, 29 Jan 2015 09:08:25 -0500</pubDate>
+    <lastBuildDate>Thu, 29 Jan 2015 09:08:25 -0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -23,7 +23,7 @@
     
       <item>
         <title>Restoration Slider</title>
-        <description>My fiancee wanted an interactive way to demonstrate the value her art restoration business delivers to customers. I made this JavaScript widget to show detailed before and after views of the artworks. Use the slider in the middle of the image to swipe between the before and after images.&lt;div class=&quot;restoration_slider&quot;&gt;&lt;img src=&quot;/img/slider/slider_img_before.jpg&quot; alt=&quot;Before&quot; title=&quot;Before&quot; width=&quot;600&quot; height=&quot;373&quot; class=&quot;aligncenter size-large wp-image-807&quot; /&gt;&lt;img src=&quot;/img/slider/slider_img_after.jpg&quot; alt=&quot;After&quot; title=&quot;After&quot; width=&quot;600&quot; height=&quot;373&quot; /&gt;&lt;/div&gt;</description>
+        <description>My fiancee wanted an interactive way to demonstrate the value her art restoration business delivers to customers. I made this JavaScript widget to show detailed before and after views of the artworks. Use the slider in the middle of the image to swipe between the before and after images.&lt;div class=&quot;restoration_slider&quot;&gt;&lt;img src=&quot;/img/slider/slider_img_before.jpg&quot; alt=&quot;Before&quot; title=&quot;Before&quot; width=&quot;300&quot; height=&quot;187&quot; class=&quot;aligncenter size-large wp-image-807&quot; /&gt;&lt;img src=&quot;/img/slider/slider_img_after.jpg&quot; alt=&quot;After&quot; title=&quot;After&quot; width=&quot;300&quot; height=&quot;187&quot; /&gt;&lt;/div&gt;</description>
         <pubDate>Tue, 15 Jul 2014 00:00:00 -0400</pubDate>
         <link>https://rluckom.github.io/web%20development/2014/07/15/Restoration-Slider/</link>
         <guid isPermaLink="true">https://rluckom.github.io/web%20development/2014/07/15/Restoration-Slider/</guid>
