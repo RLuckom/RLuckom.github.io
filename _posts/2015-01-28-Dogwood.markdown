@@ -4,7 +4,7 @@ modal-id: 4
 date: 2014-07-15
 img: Dogwood.png
 alt: image-alt
-project-date: April 2014
+project-date: July 2014
 category: Web Development
 repository: https://github.com/RLuckom/ambigui
 description: I wrote an SVG tree UI element using only vanilla JavaScript after suffering Dependency Fatigue on a personal project. The following is an ExtendableTree element that can be used as a Todo list. Click on the text of a node to edit it and show the dialog for deleting the node; click the plus circles beneath the nodes to add new ones.<div id="ExtendableTree"></div>

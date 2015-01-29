@@ -5,8 +5,8 @@
     <description>Software Engineer specializing in Python and JavaScript.</description>
     <link>https://rluckom.github.io/</link>
     <atom:link href="https://rluckom.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 29 Jan 2015 17:30:07 -0500</pubDate>
-    <lastBuildDate>Thu, 29 Jan 2015 17:30:07 -0500</lastBuildDate>
+    <pubDate>Thu, 29 Jan 2015 17:36:39 -0500</pubDate>
+    <lastBuildDate>Thu, 29 Jan 2015 17:36:39 -0500</lastBuildDate>
     <generator>Jekyll v2.4.0</generator>
     
       <item>
@@ -47,7 +47,7 @@
     
       <item>
         <title>Javascript Game Of Life</title>
-        <description>I wrote a JavaScript version of Conway's Game of life as a way to learn about cellular automata. The original version was written using SVG for the board, but I found that SVG rendered too slowly for large boards so I switched to using a Canvas element. &lt;div id=&quot;GOL&quot;&gt;&lt;/div&gt; To run the game, click on individual squares to toggle them between the black and white states, then click &quot;Play.&quot; The game stops when the cursor is over the board and restarts when it leaves. The slider controls the time between steps. My favorite pattern to start with is the one in the image above.</description>
+        <description>I wrote a JavaScript version of &lt;a href=&quot;http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life&quot;&gt;Conway's Game of Life&lt;/a&gt; as a way to learn about cellular automata. The original version was written using SVG for the board, but I found that SVG rendered too slowly for large boards so I switched to using a Canvas element. &lt;div id=&quot;GOL&quot;&gt;&lt;/div&gt; To run the game, click on individual squares to toggle them between the black and white states, then click &quot;Play.&quot; The game stops when the cursor is over the board and restarts when it leaves. The slider controls the time between steps. My favorite pattern to start with is the one in the image above.</description>
         <pubDate>Tue, 15 Jul 2014 00:00:00 -0400</pubDate>
         <link>https://rluckom.github.io/web%20development/2014/07/15/JavaScript-Game-Of-Life/</link>
         <guid isPermaLink="true">https://rluckom.github.io/web%20development/2014/07/15/JavaScript-Game-Of-Life/</guid>
