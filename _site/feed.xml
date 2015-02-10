@@ -5,9 +5,9 @@
     <description>Software Engineer specializing in Python and JavaScript.</description>
     <link>https://rluckom.github.io/</link>
     <atom:link href="https://rluckom.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Thu, 29 Jan 2015 17:36:39 -0500</pubDate>
-    <lastBuildDate>Thu, 29 Jan 2015 17:36:39 -0500</lastBuildDate>
-    <generator>Jekyll v2.4.0</generator>
+    <pubDate>Tue, 10 Feb 2015 12:25:14 -0500</pubDate>
+    <lastBuildDate>Tue, 10 Feb 2015 12:25:14 -0500</lastBuildDate>
+    <generator>Jekyll v2.5.3</generator>
     
       <item>
         <title>Mandelbuddy</title>
@@ -18,6 +18,18 @@
         
         
         <category>web development</category>
+        
+      </item>
+    
+      <item>
+        <title>Ansible Wordpress</title>
+        <description>I was making a WordPress site for a friend and wanted a quick way to deploy the work in progress to a DigitalOcean droplet. This ansible playbook takes a mysqldump and .tgz of a wp-content directory and recreates the site on a fresh Ubuntu 14.x install in one step.</description>
+        <pubDate>Wed, 28 Jan 2015 00:00:00 -0500</pubDate>
+        <link>https://rluckom.github.io/devops/2015/01/28/Ansible-WordPress/</link>
+        <guid isPermaLink="true">https://rluckom.github.io/devops/2015/01/28/Ansible-WordPress/</guid>
+        
+        
+        <category>devops</category>
         
       </item>
     
@@ -51,18 +63,6 @@
         <pubDate>Tue, 15 Jul 2014 00:00:00 -0400</pubDate>
         <link>https://rluckom.github.io/web%20development/2014/07/15/JavaScript-Game-Of-Life/</link>
         <guid isPermaLink="true">https://rluckom.github.io/web%20development/2014/07/15/JavaScript-Game-Of-Life/</guid>
-        
-        
-        <category>web development</category>
-        
-      </item>
-    
-      <item>
-        <title>Dogwood</title>
-        <description>I wrote an SVG tree UI element using only vanilla JavaScript after suffering Dependency Fatigue on a personal project. The following is an ExtendableTree element that can be used as a Todo list. Click on the text of a node to edit it and show the dialog for deleting the node; click the plus circles beneath the nodes to add new ones.&lt;div id=&quot;ExtendableTree&quot;&gt;&lt;/div&gt;</description>
-        <pubDate>Tue, 15 Jul 2014 00:00:00 -0400</pubDate>
-        <link>https://rluckom.github.io/web%20development/2014/07/15/Dogwood/</link>
-        <guid isPermaLink="true">https://rluckom.github.io/web%20development/2014/07/15/Dogwood/</guid>
         
         
         <category>web development</category>
